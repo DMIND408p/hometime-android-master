@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     private TramsApi createApiClient() {
 
         String BASE_URL = "http://ws3.tramtracker.com.au";
-
+    //using retrofit Http Api library
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(MoshiConverterFactory.create())
@@ -72,15 +72,18 @@ public class MainActivity extends AppCompatActivity {
 
         return retrofit.create(TramsApi.class);
     }
+
     //getting token for api and adding it to base url
     private class RequestToken extends AsyncTask<String, Integer, String> {
 
+        //object of tramsapi function to call
         TramsApi api;
 
         RequestToken(TramsApi api) {
             this.api = api;
         }
 
+        //override method to return the result from api and check exceptions
         @Override
         protected String doInBackground(String... params) {
             Call<ApiResponse<Token>> call = api.token();
@@ -140,11 +143,14 @@ public class MainActivity extends AppCompatActivity {
 
     //function to show trams list data
     private void showTrams() {
-
+        //List to store values of north in north list and south in south list
         List<String> northValues = new ArrayList<>();
         List<String> southValues = new ArrayList<>();
+
+        //getting current time using calendar import
         Calendar c = Calendar.getInstance();
         Date currentTime = c.getTime();
+        //for loop max values of elements receive from api
         for (Tram tram : northTrams) {
             //Need Date format to calculate the difference
             Date dateDifferenceNorth = dateFromDotNetDate(tram.predictedArrival);
@@ -154,13 +160,15 @@ public class MainActivity extends AppCompatActivity {
             long diff = dateDifferenceNorth.getTime() - currentTime.getTime();
             //changing difference into days, hours and minutes
            int days = (int) (diff / (1000*60*60*24));
+           //into hours
             int hours = (int)((diff-(1000*60*60*24*days)) / (1000*60*60));
+            //into minutes
             int min = (int) (diff - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
             //I can easily shows days and hours if the tram is not there and next is on next date
             northValues.add(date + "\nRemaining Time" + " " + min + " " + "Minutes" );
 
         }
-
+        //for loop max values of elements receive from api
         for (Tram tram : southTrams) {
             //Need Date format to calculate the difference
             Date dateDifferenceSouth = dateFromDotNetDate((tram.predictedArrival));
