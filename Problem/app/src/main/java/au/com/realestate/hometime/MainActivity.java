@@ -28,7 +28,6 @@ import retrofit2.http.Query;
 public class MainActivity extends AppCompatActivity {
 
 
-
     private List<Tram> southTrams;
     private List<Tram> northTrams;
 
@@ -39,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         northListView = (ListView) findViewById(R.id.northListView);
         southListView = (ListView) findViewById(R.id.southListView);

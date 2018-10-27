@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HomeTime</string>
+    <string name="north">North</string>
+    <string name="south">South</string>
+    <string name="clr_btn">Clear</string>
+    <string name="refresh_btn">Refresh</string>
 </resources>
