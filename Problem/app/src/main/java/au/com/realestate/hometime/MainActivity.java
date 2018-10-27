@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //OnRefresh button click
     public void refreshClick(View view) {
-        //On refresh create api clinet to get data
+        //On refresh create api client to get data
         TramsApi tramsApi = createApiClient();
 
         try {
@@ -207,7 +207,4 @@ public class MainActivity extends AppCompatActivity {
         Long unixTime = Long.parseLong(date);
         return new Date(unixTime);
     }
-
-
-
 }
