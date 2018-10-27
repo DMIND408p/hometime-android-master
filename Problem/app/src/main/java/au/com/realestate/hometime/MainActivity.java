@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -69,33 +68,33 @@ public class MainActivity extends AppCompatActivity {
         List<String> southValues = new ArrayList<>();
         Calendar c = Calendar.getInstance();
         Date currentTime = c.getTime();
-        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
-        String formattedDate = df.format(currentTime);
-
-
         for (Tram tram : northTrams) {
-            Date date1 = dateFromDotNetDate(tram.predictedArrival);
+            //Need Date format to calculate the difference
+            Date dateDifferenceNorth = dateFromDotNetDate(tram.predictedArrival);
+            //Converting into string to add into list
             String date = dateFromDotNetDate(tram.predictedArrival).toString();
-            SimpleDateFormat df1 = new SimpleDateFormat("HH:mm:ss");
-            String formattedDate1 = df1.format(date1);
-
-            long diff = date1.getTime() - currentTime.getTime();
+            //Calculating difference in time to find out remaining time
+            long diff = dateDifferenceNorth.getTime() - currentTime.getTime();
+            //changing difference into days, hours and minutes
            int days = (int) (diff / (1000*60*60*24));
             int hours = (int)((diff-(1000*60*60*24*days)) / (1000*60*60));
             int min = (int) (diff - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
-
-//            try {
-//                Date dd = df1.parse(formattedDate1);
-//            }catch (Exception e){
-//                e.printStackTrace();
-//            }
-            northValues.add(date + " Remaining Time" + " " + min + "Minutes" );
+            northValues.add(date + " Remaining Time" + " " + min + " " + "Minutes" );
 
         }
 
         for (Tram tram : southTrams) {
+            //Need Date format to calculate the difference
+            Date dateDifferenceSouth = dateFromDotNetDate((tram.predictedArrival));
+            //Converting into string to add into list
             String date = dateFromDotNetDate(tram.predictedArrival).toString();
-            southValues.add(date);
+            //Calculating difference in time to find out remaining time
+            long diffTime = dateDifferenceSouth.getTime() - currentTime.getTime();
+            //changing difference into days, hours and minutes
+            int days = (int) (diffTime / (1000*60*60*24));
+            int hours = (int)((diffTime-(1000*60*60*24*days)) / (1000*60*60));
+            int min = (int) (diffTime - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
+            southValues.add(date + " Remaining Time" + " " + min + " " + "Minutes" );
         }
 
         northListView.setAdapter(new ArrayAdapter<>(
