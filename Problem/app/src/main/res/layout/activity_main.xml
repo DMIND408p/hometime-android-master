@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="au.com.realestate.hometime.MainActivity">
+    tools:context="au.com.realestate.hometime.MainActivity"
+    android:background="@color/snowWhite">
 
     <LinearLayout
         android:layout_width="match_parent"

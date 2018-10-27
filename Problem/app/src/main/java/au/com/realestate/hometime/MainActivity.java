@@ -27,6 +27,8 @@ import retrofit2.http.Query;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     private List<Tram> southTrams;
     private List<Tram> northTrams;
 
@@ -42,89 +44,6 @@ public class MainActivity extends AppCompatActivity {
         southListView = (ListView) findViewById(R.id.southListView);
     }
 
-    public void refreshClick(View view) {
-
-        TramsApi tramsApi = createApiClient();
-
-        try {
-            String token = new RequestToken(tramsApi).execute("").get();
-            this.northTrams = new RequestTrams(tramsApi, token).execute("4055").get();
-            this.southTrams = new RequestTrams(tramsApi, token).execute("4155").get();
-            showTrams();
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void clearClick(View view) {
-        northTrams = new ArrayList<>();
-        southTrams = new ArrayList<>();
-        showTrams();
-    }
-
-    private void showTrams() {
-
-        List<String> northValues = new ArrayList<>();
-        List<String> southValues = new ArrayList<>();
-        Calendar c = Calendar.getInstance();
-        Date currentTime = c.getTime();
-        for (Tram tram : northTrams) {
-            //Need Date format to calculate the difference
-            Date dateDifferenceNorth = dateFromDotNetDate(tram.predictedArrival);
-            //Converting into string to add into list
-            String date = dateFromDotNetDate(tram.predictedArrival).toString();
-            //Calculating difference in time to find out remaining time
-            long diff = dateDifferenceNorth.getTime() - currentTime.getTime();
-            //changing difference into days, hours and minutes
-           int days = (int) (diff / (1000*60*60*24));
-            int hours = (int)((diff-(1000*60*60*24*days)) / (1000*60*60));
-            int min = (int) (diff - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
-            northValues.add(date + " Remaining Time" + " " + min + " " + "Minutes" );
-
-        }
-
-        for (Tram tram : southTrams) {
-            //Need Date format to calculate the difference
-            Date dateDifferenceSouth = dateFromDotNetDate((tram.predictedArrival));
-            //Converting into string to add into list
-            String date = dateFromDotNetDate(tram.predictedArrival).toString();
-            //Calculating difference in time to find out remaining time
-            long diffTime = dateDifferenceSouth.getTime() - currentTime.getTime();
-            //changing difference into days, hours and minutes
-            int days = (int) (diffTime / (1000*60*60*24));
-            int hours = (int)((diffTime-(1000*60*60*24*days)) / (1000*60*60));
-            int min = (int) (diffTime - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
-            southValues.add(date + " Remaining Time" + " " + min + " " + "Minutes" );
-        }
-
-        northListView.setAdapter(new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                northValues));
-
-        southListView.setAdapter(new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                southValues));
-    }
-
-    /////////////
-    // Convert .NET Date to Date
-    ////////////
-    private Date dateFromDotNetDate(String dotNetDate) {
-
-        int startIndex = dotNetDate.indexOf("(") + 1;
-        int endIndex = dotNetDate.indexOf("+");
-        String date = dotNetDate.substring(startIndex, endIndex);
-
-        Long unixTime = Long.parseLong(date);
-        return new Date(unixTime);
-    }
-
-    ////////////
-    // API
-    ////////////
-
     private interface TramsApi {
 
         @GET("/TramTracker/RestService/GetDeviceToken/?aid=TTIOSJSON&devInfo=HomeTimeAndroid")
@@ -136,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 @Query("tkn") String token
         );
     }
+    ////////////
+    // API
+    ////////////
 
+
+    //Base url of api to get data
     private TramsApi createApiClient() {
 
         String BASE_URL = "http://ws3.tramtracker.com.au";
@@ -148,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         return retrofit.create(TramsApi.class);
     }
-
+    //getting token for api and adding it to base url
     private class RequestToken extends AsyncTask<String, Integer, String> {
 
         TramsApi api;
@@ -168,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
-
+    //verification checking token and id to get data
     private class RequestTrams extends AsyncTask<String, Integer, List<Tram>> {
 
         private TramsApi api;
@@ -192,5 +116,90 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
+    //OnRefresh button click
+    public void refreshClick(View view) {
+        //On refresh create api clinet to get data
+        TramsApi tramsApi = createApiClient();
+
+        try {
+            String token = new RequestToken(tramsApi).execute("").get();
+            //getting north side and south side tram size
+            this.northTrams = new RequestTrams(tramsApi, token).execute("4055").get();
+            this.southTrams = new RequestTrams(tramsApi, token).execute("4155").get();
+            showTrams();
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+    //On Clear it clears the previous results
+    public void clearClick(View view) {
+        northTrams = new ArrayList<>();
+        southTrams = new ArrayList<>();
+        showTrams();
+    }
+
+    //function to show trams list data
+    private void showTrams() {
+
+        List<String> northValues = new ArrayList<>();
+        List<String> southValues = new ArrayList<>();
+        Calendar c = Calendar.getInstance();
+        Date currentTime = c.getTime();
+        for (Tram tram : northTrams) {
+            //Need Date format to calculate the difference
+            Date dateDifferenceNorth = dateFromDotNetDate(tram.predictedArrival);
+            //Converting into string to add into list
+            String date = dateFromDotNetDate(tram.predictedArrival).toString();
+            //Calculating difference in time to find out remaining time
+            long diff = dateDifferenceNorth.getTime() - currentTime.getTime();
+            //changing difference into days, hours and minutes
+           int days = (int) (diff / (1000*60*60*24));
+            int hours = (int)((diff-(1000*60*60*24*days)) / (1000*60*60));
+            int min = (int) (diff - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
+            //I can easily shows days and hours if the tram is not there and next is on next date
+            northValues.add(date + "\nRemaining Time" + " " + min + " " + "Minutes" );
+
+        }
+
+        for (Tram tram : southTrams) {
+            //Need Date format to calculate the difference
+            Date dateDifferenceSouth = dateFromDotNetDate((tram.predictedArrival));
+            //Converting into string to add into list
+            String date = dateFromDotNetDate(tram.predictedArrival).toString();
+            //Calculating difference in time to find out remaining time
+            long diffTime = dateDifferenceSouth.getTime() - currentTime.getTime();
+            //changing difference into days, hours and minutes
+            int days = (int) (diffTime / (1000*60*60*24));
+            int hours = (int)((diffTime-(1000*60*60*24*days)) / (1000*60*60));
+            int min = (int) (diffTime - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
+            //I can easily shows days and hours if the tram is not there and next is on next date
+            southValues.add(date + "\nRemaining Time" + " " + min + " " + "Minutes" );
+        }
+        //adapter for adapter view we need to use it when using listview, grid view or spinner
+        northListView.setAdapter(new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                northValues));
+//adapter for adapter view we need to use it when using listview, grid view or spinner
+        southListView.setAdapter(new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                southValues));
+    }
+
+    /////////////
+    // Convert .NET Date to Date
+    ////////////
+    private Date dateFromDotNetDate(String dotNetDate) {
+
+        int startIndex = dotNetDate.indexOf("(") + 1;
+        int endIndex = dotNetDate.indexOf("+");
+        String date = dotNetDate.substring(startIndex, endIndex);
+
+        Long unixTime = Long.parseLong(date);
+        return new Date(unixTime);
+    }
+
+
 
 }

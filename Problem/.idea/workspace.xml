@@ -36,66 +36,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/au/com/realestate/hometime/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1681">
-              <caret line="138" selection-start-line="138" selection-end-line="138" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivityTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/au/com/realestate/hometime/MainActivityTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExampleUnitTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/au/com/realestate/hometime/ExampleUnitTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-335" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExampleInstrumentedTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/au/com/realestate/hometime/ExampleInstrumentedTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="14" column="51" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="51" />
+            <state relative-caret-position="283">
+              <caret line="138" column="5" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3140#3141#0" expanded="true" />
+                <element signature="e#3178#3179#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,20 +53,8 @@
       <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clearbtn.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/clearbtn.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="65" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
+            <state relative-caret-position="105">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -138,6 +76,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>home</find>
+      <find>inte</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -2403,14 +2342,16 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/refreshbtn.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/clearbtn.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/au/com/realestate/hometime/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/au/com/realestate/hometime/MainActivityTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_splash_screen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/au/com/realestate/hometime/MainActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="708" />
@@ -2446,18 +2387,6 @@
             <path>
               <item name="Problem" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="hometime" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Problem" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="hometime" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Problem" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
@@ -2465,18 +2394,6 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Problem" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="mipmap" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Problem" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="Problem" type="1abcf292:AndroidViewProjectNode" />
@@ -2505,6 +2422,10 @@
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="au.com.realestate.hometime" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="au.com.realestate.hometime" />
+      <recent name="au.com.realestate.hometime.models" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -2773,7 +2694,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="708" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="706" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
@@ -2792,13 +2713,13 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.32993197" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.33105803" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32993197" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39965987" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993174" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2818,7 +2739,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <option name="time" value="33" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -2853,26 +2774,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/clearbtn.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="65" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/os/Looper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
@@ -2880,13 +2781,6 @@
           <folding>
             <element signature="e#612#613#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.3.1/appcompat-v7-25.3.1-sources.jar!/android/support/v7/app/AppCompatViewInflater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="291" selection-start-line="291" selection-end-line="291" />
         </state>
       </provider>
     </entry>
@@ -2909,20 +2803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/au/com/realestate/hometime/MainActivityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/au/com/realestate/hometime/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1681">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -2933,6 +2813,62 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/clearbtn.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/au/com/realestate/hometime/MainActivityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.3.1/appcompat-v7-25.3.1-sources.jar!/android/support/v7/app/AppCompatViewInflater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="295" selection-start-line="295" selection-end-line="295" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="299" column="35" selection-start-line="299" selection-start-column="35" selection-end-line="299" selection-end-column="35" />
+          <folding>
+            <element signature="e#13615#13616#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -2940,14 +2876,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+        <state relative-caret-position="105">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
+      <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/au/com/realestate/hometime/models/SplashScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/au/com/realestate/hometime/SplashScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash_screen.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/au/com/realestate/hometime/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="138" column="5" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3140#3141#0" expanded="true" />
+            <element signature="e#3178#3179#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
