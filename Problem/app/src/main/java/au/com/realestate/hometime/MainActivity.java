@@ -6,6 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
 import au.com.realestate.hometime.models.ApiResponse;
 import au.com.realestate.hometime.models.Token;
 import au.com.realestate.hometime.models.Tram;
@@ -16,12 +25,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,10 +67,30 @@ public class MainActivity extends AppCompatActivity {
 
         List<String> northValues = new ArrayList<>();
         List<String> southValues = new ArrayList<>();
+        Calendar c = Calendar.getInstance();
+        Date currentTime = c.getTime();
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
+        String formattedDate = df.format(currentTime);
+
 
         for (Tram tram : northTrams) {
+            Date date1 = dateFromDotNetDate(tram.predictedArrival);
             String date = dateFromDotNetDate(tram.predictedArrival).toString();
-            northValues.add(date);
+            SimpleDateFormat df1 = new SimpleDateFormat("HH:mm:ss");
+            String formattedDate1 = df1.format(date1);
+
+            long diff = date1.getTime() - currentTime.getTime();
+           int days = (int) (diff / (1000*60*60*24));
+            int hours = (int)((diff-(1000*60*60*24*days)) / (1000*60*60));
+            int min = (int) (diff - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
+
+//            try {
+//                Date dd = df1.parse(formattedDate1);
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+            northValues.add(date + " Remaining Time" + " " + min + "Minutes" );
+
         }
 
         for (Tram tram : southTrams) {
