@@ -17,7 +17,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="North"/>
+            android:text="North"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
 
         <ListView
             android:id="@+id/northListView"
@@ -28,7 +30,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="South"/>
+            android:text="South"
+            android:padding="5dp"
+            android:layout_margin="5dp" />
 
         <ListView
             android:id="@+id/southListView"
@@ -51,6 +55,7 @@
             android:text="Clear"
             android:layout_weight="1"
             android:onClick="clearClick"
+            android:background="@drawable/clearbtn"
             style="@style/Base.Widget.AppCompat.Button.Borderless"/>
 
         <Button
@@ -60,6 +65,7 @@
             android:text="Refresh"
             android:layout_weight="1"
             android:onClick="refreshClick"
+            android:background="@drawable/refreshbtn"
             style="@style/Base.Widget.AppCompat.Button.Borderless"/>
     </LinearLayout>
 </RelativeLayout>
