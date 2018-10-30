@@ -34,18 +34,7 @@ public class MainActivity extends AppCompatActivity {
         northListView = (ListView) findViewById(R.id.northListView);
         southListView = (ListView) findViewById(R.id.southListView);
     }
-//
-//    private interface TramsApi {
-//
-//        @GET("/TramTracker/RestService/GetDeviceToken/?aid=TTIOSJSON&devInfo=HomeTimeAndroid")
-//        Call<ApiResponse<Token>> token();
-//
-//        @GET("/TramTracker/RestService//GetNextPredictedRoutesCollection/{stopId}/78/false/?aid=TTIOSJSON&cid=2")
-//        Call<ApiResponse<Tram>> trams(
-//                @Path("stopId") String stopId,
-//                @Query("tkn") String token
-//        );
-//    }
+
     ////////////
     // API
     ////////////
@@ -64,52 +53,7 @@ public class MainActivity extends AppCompatActivity {
         return retrofit.create(TramsApi.class);
     }
 
-    //getting token for api and adding it to base url
-//    private class RequestToken extends AsyncTask<String, Integer, String> {
-//
-//        //object of tramsapi function to call
-//        TramsApi api;
-//
-//        RequestToken(TramsApi api) {
-//            this.api = api;
-//        }
-//
-//        //override method to return the result from api and check exceptions
-//        @Override
-//        protected String doInBackground(String... params) {
-//            Call<ApiResponse<Token>> call = api.token();
-//            try {
-//                return call.execute().body().responseObject.get(0).value;
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return null;
-//        }
-//    }
-    //verification checking token and id to get data
-//    private class RequestTrams extends AsyncTask<String, Integer, List<Tram>> {
-//
-//        private TramsApi api;
-//        private String token;
-//
-//        RequestTrams(TramsApi api, String token) {
-//            this.api = api;
-//            this.token = token;
-//        }
-//
-//        @Override
-//        protected List<Tram> doInBackground(String... stops) {
-//
-//            Call<ApiResponse<Tram>> call = api.trams(stops[0], token);
-//            try {
-//                Response<ApiResponse<Tram>> resp = call.execute();
-//                return resp.body().responseObject;
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return null;
-//        }
-//    }
+
     //OnRefresh button click
     public void refreshClick(View view) {
         //On refresh create api client to get data
