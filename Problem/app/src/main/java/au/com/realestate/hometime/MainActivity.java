@@ -103,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
             northValues.add(date + "\nRemaining Time" + " " + min + " " + "Minutes" );
 
         }
+
+
+
         //for loop max values of elements receive from api
         for (Tram tram : southTrams) {
             //Need Date format to calculate the difference
@@ -115,9 +118,11 @@ public class MainActivity extends AppCompatActivity {
             int days = (int) (diffTime / (1000*60*60*24));
             int hours = (int)((diffTime-(1000*60*60*24*days)) / (1000*60*60));
             int min = (int) (diffTime - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
-            //I can easily shows days and hours if the tram is not there and next is on next date
+            //I can easily shows days and hours if the tram is not there and next is on next date but not required
             southValues.add(date + "\nRemaining Time" + " " + min + " " + "Minutes" );
         }
+
+
         //adapter for adapter view we need to use it when using listview, grid view or spinner
         northListView.setAdapter(new ArrayAdapter<>(
                 this,
@@ -129,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 southValues));
     }
+
+
 
     /////////////
     // Convert .NET Date to Date
