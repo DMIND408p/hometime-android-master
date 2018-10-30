@@ -1,29 +1,20 @@
 package au.com.realestate.hometime;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-import au.com.realestate.hometime.models.ApiResponse;
-import au.com.realestate.hometime.models.Token;
 import au.com.realestate.hometime.models.Tram;
-import retrofit2.Call;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,18 +34,18 @@ public class MainActivity extends AppCompatActivity {
         northListView = (ListView) findViewById(R.id.northListView);
         southListView = (ListView) findViewById(R.id.southListView);
     }
-
-    private interface TramsApi {
-
-        @GET("/TramTracker/RestService/GetDeviceToken/?aid=TTIOSJSON&devInfo=HomeTimeAndroid")
-        Call<ApiResponse<Token>> token();
-
-        @GET("/TramTracker/RestService//GetNextPredictedRoutesCollection/{stopId}/78/false/?aid=TTIOSJSON&cid=2")
-        Call<ApiResponse<Tram>> trams(
-                @Path("stopId") String stopId,
-                @Query("tkn") String token
-        );
-    }
+//
+//    private interface TramsApi {
+//
+//        @GET("/TramTracker/RestService/GetDeviceToken/?aid=TTIOSJSON&devInfo=HomeTimeAndroid")
+//        Call<ApiResponse<Token>> token();
+//
+//        @GET("/TramTracker/RestService//GetNextPredictedRoutesCollection/{stopId}/78/false/?aid=TTIOSJSON&cid=2")
+//        Call<ApiResponse<Tram>> trams(
+//                @Path("stopId") String stopId,
+//                @Query("tkn") String token
+//        );
+//    }
     ////////////
     // API
     ////////////
@@ -74,51 +65,51 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //getting token for api and adding it to base url
-    private class RequestToken extends AsyncTask<String, Integer, String> {
-
-        //object of tramsapi function to call
-        TramsApi api;
-
-        RequestToken(TramsApi api) {
-            this.api = api;
-        }
-
-        //override method to return the result from api and check exceptions
-        @Override
-        protected String doInBackground(String... params) {
-            Call<ApiResponse<Token>> call = api.token();
-            try {
-                return call.execute().body().responseObject.get(0).value;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }
+//    private class RequestToken extends AsyncTask<String, Integer, String> {
+//
+//        //object of tramsapi function to call
+//        TramsApi api;
+//
+//        RequestToken(TramsApi api) {
+//            this.api = api;
+//        }
+//
+//        //override method to return the result from api and check exceptions
+//        @Override
+//        protected String doInBackground(String... params) {
+//            Call<ApiResponse<Token>> call = api.token();
+//            try {
+//                return call.execute().body().responseObject.get(0).value;
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return null;
+//        }
+//    }
     //verification checking token and id to get data
-    private class RequestTrams extends AsyncTask<String, Integer, List<Tram>> {
-
-        private TramsApi api;
-        private String token;
-
-        RequestTrams(TramsApi api, String token) {
-            this.api = api;
-            this.token = token;
-        }
-
-        @Override
-        protected List<Tram> doInBackground(String... stops) {
-
-            Call<ApiResponse<Tram>> call = api.trams(stops[0], token);
-            try {
-                Response<ApiResponse<Tram>> resp = call.execute();
-                return resp.body().responseObject;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }
+//    private class RequestTrams extends AsyncTask<String, Integer, List<Tram>> {
+//
+//        private TramsApi api;
+//        private String token;
+//
+//        RequestTrams(TramsApi api, String token) {
+//            this.api = api;
+//            this.token = token;
+//        }
+//
+//        @Override
+//        protected List<Tram> doInBackground(String... stops) {
+//
+//            Call<ApiResponse<Tram>> call = api.trams(stops[0], token);
+//            try {
+//                Response<ApiResponse<Tram>> resp = call.execute();
+//                return resp.body().responseObject;
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return null;
+//        }
+//    }
     //OnRefresh button click
     public void refreshClick(View view) {
         //On refresh create api client to get data
